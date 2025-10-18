@@ -13,7 +13,7 @@ Users can search flights, view details, register/login, and go through the booki
 
 ---
 
-## 🧠 Database Schema (Planning Only)
+##  Database Schema (Planning Only)
 
 ### Entities
 1. **Users** — user info and credentials  
