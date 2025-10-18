@@ -1,0 +1,146 @@
+/* ========== SKYFLY FLIGHT MODULES ========== */
+.skyfly-flights, .skyfly-details, .skyfly-checkout, .skyfly-confirmation {
+  padding: 60px 0;
+  background: #f8faff;
+}
+
+.skyfly-title {
+  text-align: center;
+  color: #003566;
+  margin-bottom: 25px;
+}
+
+.skyfly-summary {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: #e9f2ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.skyfly-results {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skyfly-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+
+.skyfly-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.skyfly-card-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.skyfly-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 1px;
+  object-fit:contain
+}
+
+.skyfly-card-price {
+  text-align: right;
+}
+
+.skyfly-btn {
+  background: #0071eb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.skyfly-btn:hover {
+  background: #005fcc;
+}
+
+/* Details */
+.skyfly-detail-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.skyfly-logo-lg {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.skyfly-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.skyfly-pricebox {
+  background: #f1f6ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.skyfly-total {
+  font-weight: 700;
+  color: #003566;
+}
+
+/* Checkout */
+.skyfly-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.skyfly-form-group input, .skyfly-form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.skyfly-back {
+  display: inline-block;
+  color: #0071eb;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+/* Confirmation */
+.skyfly-check-icon {
+  font-size: 60px;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.skyfly-summary-box {
+  background: #f1f6ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  margin: 20px 0;
+}

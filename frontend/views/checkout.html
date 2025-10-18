@@ -1,0 +1,38 @@
+<section id="checkout" class="skyfly-checkout">
+  <div class="container">
+    <a href="#flight-details" class="skyfly-back">← Back</a>
+
+    <h2 class="skyfly-title">Passenger Details</h2>
+
+    <form id="skyfly-checkout-form" class="skyfly-form">
+      <div class="skyfly-form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="John Doe" required>
+      </div>
+
+      <div class="skyfly-form-group">
+        <label>Email</label>
+        <input type="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="skyfly-form-group">
+        <label>Payment Method</label>
+        <select required>
+          <option>Credit Card</option>
+          <option>Debit Card</option>
+          <option>PayPal</option>
+        </select>
+      </div>
+
+      <div class="skyfly-form-group">
+        <label>Card Number</label>
+        <input type="text" placeholder="xxxx xxxx xxxx xxxx" required>
+      </div>
+
+      <button type="submit" class="skyfly-btn"
+        onclick="event.preventDefault(); location.hash='#booking-confirmation';">
+        Confirm Booking
+      </button>
+    </form>
+  </div>
+</section>
