@@ -30,7 +30,7 @@ Users can search flights, view details, register/login, and go through the booki
 
 ---
 
-## 🖼️ ER Diagram
+##  ER Diagram
 
 ![ER Diagram](./frontend/assets/er.png)
 
