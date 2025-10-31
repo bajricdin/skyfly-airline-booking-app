@@ -2,7 +2,8 @@
 
 **Course:** Web Programming  
 **Student:** Din Bajrić  
-**Milestone 1:** Frontend SPA Setup & Database Schema  
+**Milestone 1:** Frontend SPA Setup & Database Schema 
+**Milestone 2:** DAO Layer and SQL file 
 
 ---
 
@@ -13,7 +14,7 @@ Users can search flights, view details, register/login, and go through the booki
 
 ---
 
-##  Database Schema (Planning Only)
+##  Database Schema
 
 ### Entities
 1. **Users** — user info and credentials  
