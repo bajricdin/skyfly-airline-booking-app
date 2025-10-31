@@ -8,9 +8,6 @@ Thumbs.db
 # Ignore environment files
 .env
 
-# Ignore database exports
-*.sql
-
 # Ignore node_modules if you ever use npm
 /node_modules/
 
