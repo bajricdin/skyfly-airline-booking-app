@@ -1,38 +1,37 @@
-<section id="checkout" class="skyfly-checkout">
+<section class="skyfly-checkout">
   <div class="container">
-    <a href="#flight-details" class="skyfly-back">← Back</a>
 
-    <h2 class="skyfly-title">Passenger Details</h2>
+    <a href="#flights" class="skyfly-back">← Back to flights</a>
+
+    <h2 class="skyfly-title">Checkout</h2>
+
+    <!-- FLIGHT SUMMARY (injected by JS) -->
+    <div id="checkout-flight-summary" class="skyfly-summary-box"></div>
 
     <form id="skyfly-checkout-form" class="skyfly-form">
+
       <div class="skyfly-form-group">
         <label>Full Name</label>
-        <input type="text" placeholder="John Doe" required>
+        <input id="checkout-name" type="text" required>
       </div>
 
       <div class="skyfly-form-group">
         <label>Email</label>
-        <input type="email" placeholder="example@email.com" required>
+        <input id="checkout-email" type="email" required>
       </div>
 
       <div class="skyfly-form-group">
         <label>Payment Method</label>
-        <select required>
-          <option>Credit Card</option>
-          <option>Debit Card</option>
-          <option>PayPal</option>
+        <select id="checkout-payment" required>
+          <option value="Card">Credit Card</option>
+          <option value="PayPal">PayPal</option>
         </select>
       </div>
 
-      <div class="skyfly-form-group">
-        <label>Card Number</label>
-        <input type="text" placeholder="xxxx xxxx xxxx xxxx" required>
-      </div>
-
-      <button type="submit" class="skyfly-btn"
-        onclick="event.preventDefault(); location.hash='#booking-confirmation';">
+      <button type="submit" class="skyfly-btn">
         Confirm Booking
       </button>
+
     </form>
   </div>
 </section>

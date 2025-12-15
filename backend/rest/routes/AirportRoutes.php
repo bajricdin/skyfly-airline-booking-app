@@ -1,10 +1,13 @@
 <?php
+require_once __DIR__ . '/../../data/Roles.php';
+
 /**
 * @OA\Get(path="/airports", tags={"airports"}, summary="Get all airports",
 *     @OA\Response(response=200, description="Array of airports")
 * )
 */
 Flight::route('GET /airports', function() {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     Flight::json(Flight::airportService()->getAll());
 });
 
@@ -15,6 +18,7 @@ Flight::route('GET /airports', function() {
 * )
 */
 Flight::route('GET /airports/@id', function($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     Flight::json(Flight::airportService()->getById($id));
 });
 
@@ -30,6 +34,7 @@ Flight::route('GET /airports/@id', function($id) {
 * )
 */
 Flight::route('POST /airports', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::airportService()->create($data));
 });
@@ -46,6 +51,7 @@ Flight::route('POST /airports', function() {
 * )
 */
 Flight::route('PUT /airports/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::airportService()->update($id, $data));
 });
@@ -57,6 +63,7 @@ Flight::route('PUT /airports/@id', function($id) {
 * )
 */
 Flight::route('DELETE /airports/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(["deleted" => Flight::airportService()->delete($id)]);
 });
 
@@ -79,6 +86,7 @@ Flight::route('DELETE /airports/@id', function($id) {
  * )
  */
 Flight::route('PATCH /airports/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::airportService()->update($id, $data));
 });

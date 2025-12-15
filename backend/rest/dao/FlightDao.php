@@ -12,5 +12,15 @@ class FlightDao extends BaseDao {
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    public function countByFlightId($flight_id) {
+        $stmt = $this->connection->prepare(
+            "SELECT COUNT(*) FROM bookings WHERE flight_id = :id"
+        );
+        $stmt->bindParam(":id", $flight_id);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
 }
 ?>

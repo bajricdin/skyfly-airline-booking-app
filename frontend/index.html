@@ -14,7 +14,6 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/dashboard.css">
   <link rel="stylesheet" href="./css/flights.css">
   <link rel="stylesheet" href="./css/popular-flights.css">
   <link rel="stylesheet" href="./css/loginregister.css">
@@ -33,60 +32,99 @@
   </div> -->
 
   <!-- Header -->
-  <header>
-    <nav id="navbar" class="navbar navbar-expand-lg">
-      <div class="container-fluid" id="flexx">
-        <!-- Desktop Navbar -->
-        <div class="desktop-navbar d-none d-lg-flex justify-content-center align-items-center w-100">
-          <div class="navbar-left">
-            <ul class="navbar-nav d-flex">
-              <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#flights">Flights</a>
-              </li>
-            </ul>
-          </div>
+ <header>
+  <nav id="navbar" class="navbar navbar-expand-lg">
+    <div class="container-fluid" id="flexx">
 
-          <!-- Centered Logo -->
-          <a class="navbar-brand" href="#home">
-            <img src="./assets/white_logo.png" alt="SkyFly Logo" height="60" class="logo-img">
-          </a>
+      <!-- Desktop Navbar -->
+      <div class="desktop-navbar d-none d-lg-flex justify-content-center align-items-center w-100">
 
-          <!-- Right Links -->
-          <div class="navbar-right">
-            <ul class="navbar-nav d-flex">
-              <li class="nav-item">
-                <a class="nav-link" href="#login">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#register">Register</a>
-              </li>
-            </ul>
-          </div>
+        <!-- LEFT -->
+        <div class="navbar-left">
+          <ul class="navbar-nav d-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#flights">Flights</a>
+            </li>
+          </ul>
         </div>
 
-        <!-- Mobile Navbar -->
-        <div class="mobile-navbar d-lg-none">
-          <a class="navbar-brand" href="./index.html">
-            <img src="./assets/white_logo.png" alt="SkyFly Logo" height="60" class="logo-img">
-          </a>
-          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar1">
-            <ul class="navbar-nav text-center">
-              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#flights">Flights</a></li>
-              <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
-            </ul>
-          </div>
+        <!-- LOGO -->
+        <a class="navbar-brand" href="#home">
+          <img src="./assets/white_logo.png" alt="SkyFly Logo" height="60" class="logo-img">
+        </a>
+
+        <!-- RIGHT -->
+        <div class="navbar-right">
+          <ul class="navbar-nav d-flex">
+
+            <!-- GUEST -->
+            <li class="nav-item guest-only">
+              <a class="nav-link" href="#login">Login</a>
+            </li>
+            <li class="nav-item guest-only">
+              <a class="nav-link" href="#register">Register</a>
+            </li>
+
+            <!-- AUTH -->
+            <li class="nav-item auth-only d-none">
+              <a class="nav-link" href="#dashboard">Bookings</a>
+            </li>
+            <!-- <li class="nav-item auth-only admin-only d-none">
+              <a class="nav-link" href="#admin-flights">Admin</a>
+            </li> -->
+            <li class="nav-item auth-only d-none">
+              <a class="nav-link" href="#" onclick="UserService.logout()">Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
-  </header>
+
+      <!-- Mobile Navbar -->
+      <div class="mobile-navbar d-lg-none">
+        <a class="navbar-brand" href="#home">
+          <img src="./assets/white_logo.png" alt="SkyFly Logo" height="60" class="logo-img">
+        </a>
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav text-center">
+
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#flights">Flights</a></li>
+
+            <!-- GUEST -->
+            <li class="nav-item guest-only">
+              <a class="nav-link" href="#login">Login</a>
+            </li>
+            <li class="nav-item guest-only">
+              <a class="nav-link" href="#register">Register</a>
+            </li>
+
+            <!-- AUTH -->
+            <li class="nav-item auth-only d-none">
+              <a class="nav-link" href="#dashboard">My Bookings</a>
+            </li>
+            <!-- <li class="nav-item admin-only d-none">
+              <a class="nav-link" href="#admin-flights">Admin Panel</a>
+            </li> -->
+            <li class="nav-item auth-only d-none">
+              <a class="nav-link" href="#" onclick="UserService.logout()">Logout</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
 
   <main id="spapp" role="main">
     <section id="home"></section>
@@ -97,6 +135,7 @@
     <section id="flight-details"></section>
     <section id="checkout"></section>
     <section id="booking-confirmation"></section>
+    <section id="admin-flights"></section>
   </main>
 
 
@@ -144,7 +183,23 @@
   <!-- Custom JS -->
   <script src="./js/scripts.js"></script>
   <script src="./js/offerloads.js"></script>
+  <script src="./js/dashboard.js"></script>
   <script src="./js/jquery.spapp.js"></script>
   <script src="./js/spapp.js"></script>
+  <script src="./js/api.js"></script>
+
+  <script src="./js/flights.js"></script>
+  <script src="./js/flight-details.js"></script>
+  <script src="./js/checkout.js"></script>
+  <script src="./js/booking-confirmation.js"></script>
+  <script src="js/airports.js"></script>
+  <script src="./js/admin-flights.js"></script>
+  
+
+  <script src="./utils/constants.js"></script>
+  <script src="./utils/rest-client.js"></script>
+  <!-- Services -->
+  <script src="./services/user-service.js"></script>
+
 </body>
 </html>

@@ -22,35 +22,44 @@ $(document).ready(function () {
 
     app.route({
         view: "dashboard",
-        load: "dashboard.html"
-     });
-
-     app.route({
-        view: "flights",
-        load: "flights.html"
-     });
-    app.route({
-        view: "flight-details",
-        load: "flight-details.html"
-     });
-     app.route({
-        view: "checkout",
-        load: "checkout.html"
-     });
-     app.route({
-        view: "booking-confirmation",
-        load: "booking-confirmation.html"
-     });
-
-
-
-
-
-    // Scrolls to top of the page insted of the page section
-    $(window).on("hashchange", function () {
-        window.scrollTo(0, 0);
+        load: "dashboard.html",
+        onReady: function () {
+            loadMyBookings();
+        }
     });
 
+    app.route({
+        view: "flights",
+        load: "flights.html",
+        onCreate: loadFlights,
+        onReady: loadFlights
+    });
+
+    app.route({
+        view: "checkout",
+        load: "checkout.html",
+        onReady: function () {
+            loadCheckout();
+        },
+        onCreate: function () {
+            loadCheckout();
+        }    
+    });
+
+    app.route({
+        view: "booking-confirmation",
+        load: "booking-confirmation.html",
+        onCreate: loadConfirmation,
+        onReady:loadConfirmation
+    });
+
+    // app.route({
+    //     view: "admin-flights",
+    //     load: "admin-flights.html",
+    //     onCreate: function () {
+    //         loadAdminFlights();
+    //     }
+    // }); 
     app.run();
 });
 
