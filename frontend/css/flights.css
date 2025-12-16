@@ -1,5 +1,5 @@
 /* ========== SKYFLY FLIGHT MODULES ========== */
-.skyfly-flights, .skyfly-details, .skyfly-checkout, .skyfly-confirmation {
+.skyfly-flights, .skyfly-details, .skyfly-checkout, .skyfly-confirmation, .skyfly-dashboard, .skyfly-admin {
   padding: 60px 0;
   background: #f8faff;
 }
@@ -21,6 +21,12 @@
 }
 
 .skyfly-results {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#my-bookings-list{
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -143,4 +149,106 @@
   border-radius: 10px;
   text-align: left;
   margin: 20px 0;
+}
+
+/* ========== ADMIN PANEL ========== */
+
+.skyfly-admin {
+  padding: 60px 0;
+  background: #f8faff;
+}
+
+/* ADMIN BOX (same visual weight as cards/forms) */
+.admin-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  margin-bottom: 35px;
+}
+
+/* Section titles */
+.admin-box h4 {
+  color: #003566;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ADD FLIGHT FORM */
+#admin-add-flight-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+#admin-add-flight-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+#admin-add-flight-form button {
+  grid-column: 1 / -1;
+  justify-self: flex-end;
+  margin-top: 10px;
+}
+
+/* ADMIN FLIGHTS LIST */
+#admin-flights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ADMIN FLIGHT CARD (reuse SkyFly card system) */
+.admin-flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+
+.admin-flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.admin-flight-info h5 {
+  margin: 0;
+  color: #003566;
+  font-weight: 600;
+}
+
+.admin-flight-info p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ADMIN ACTION BUTTONS */
+.admin-flight-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-flight-actions .edit-btn {
+  background: #6c757d;
+}
+
+.admin-flight-actions .edit-btn:hover {
+  background: #5a6268;
+}
+
+.admin-flight-actions .delete-btn {
+  background: #dc3545;
+}
+
+.admin-flight-actions .delete-btn:hover {
+  background: #b02a37;
 }

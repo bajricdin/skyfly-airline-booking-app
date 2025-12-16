@@ -1,29 +1,16 @@
-<section id="flight-details" class="skyfly-details">
+<section class="skyfly-flight-details">
   <div class="container">
     <a href="#flights" class="skyfly-back">← Back to flights</a>
 
-    <div class="skyfly-detail-card">
-      <div class="skyfly-header">
-        <img src="assets/airline-logo.png" alt="Airline" class="skyfly-logo-lg">
-        <h2>SkyFly 203</h2>
-        <p>Paris (CDG) → London (LHR)</p>
-      </div>
+    <h2 class="skyfly-title">Flight Details</h2>
 
-      <div class="skyfly-info-grid">
-        <div><h4>Departure</h4><p>10:00 AM, 20 Oct 2025</p></div>
-        <div><h4>Arrival</h4><p>11:20 AM, 20 Oct 2025</p></div>
-        <div><h4>Duration</h4><p>1h 20m</p></div>
-        <div><h4>Class</h4><p>Economy</p></div>
-      </div>
-
-      <div class="skyfly-pricebox">
-        <p>Base Fare: <strong>$100</strong></p>
-        <p>Taxes: <strong>$20</strong></p>
-        <hr>
-        <p class="skyfly-total">Total: <strong>$120</strong></p>
-      </div>
-
-      <button class="skyfly-btn" onclick="location.hash='#checkout'">Continue to Checkout</button>
+    <div id="flight-details-card" class="skyfly-details-card">
+      <!-- JS injects data -->
     </div>
+
+    <button class="skyfly-btn"
+      onclick="location.hash='#checkout'">
+      Continue to Checkout
+    </button>
   </div>
 </section>

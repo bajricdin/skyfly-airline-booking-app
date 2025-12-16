@@ -7,4 +7,8 @@ class AirportService extends BaseService {
     public function __construct() {
         parent::__construct(new AirportDao());
     }
+
+    public function getByIataCode($code) {
+        return $this->dao->getByIataCode($code);
+    }
 }

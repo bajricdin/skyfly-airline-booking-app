@@ -1,4 +1,9 @@
-    // Auto-slide interval for the hero carousel
+    $(document).ready(function () {
+    UserService.init();
+    UserService.applyAuthState();
+    });
+
+   // Auto-slide interval for the hero carousel
     const carouselElement = document.querySelector('#heroCarousel');
     const carousel = new bootstrap.Carousel(carouselElement, {
     interval: 5000, // 5 seconds
