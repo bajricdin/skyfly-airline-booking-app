@@ -7,34 +7,29 @@ class Config
 {
     private static function env($key, $default = null)
     {
-        return isset($_ENV[$key]) && $_ENV[$key] !== ''
-            ? $_ENV[$key]
-            : $default;
+        $value = getenv($key);
+        return $value !== false ? $value : $default;
     }
 
-    public static function DB_NAME()
-    {
-        return self::env('DB_NAME', 'skyfly');
+
+    public static function DB_HOST() {
+        return getenv('MYSQLHOST');
     }
 
-    public static function DB_PORT()
-    {
-        return self::env('DB_PORT', 3306);
+    public static function DB_PORT() {
+        return getenv('MYSQLPORT');
     }
 
-    public static function DB_USER()
-    {
-        return self::env('DB_USER', 'root');
+    public static function DB_NAME() {
+        return getenv('MYSQLDATABASE');
     }
 
-    public static function DB_PASSWORD()
-    {
-        return self::env('DB_PASSWORD', 'root');
+    public static function DB_USER() {
+        return getenv('MYSQLUSER');
     }
 
-    public static function DB_HOST()
-    {
-        return self::env('DB_HOST', '127.0.0.1');
+    public static function DB_PASSWORD() {
+        return getenv('MYSQLPASSWORD');
     }
 
     public static function JWT_SECRET()
