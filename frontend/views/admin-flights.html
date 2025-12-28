@@ -1,0 +1,29 @@
+<section class="skyfly-admin">
+  <div class="container">
+    <h2 class="skyfly-title">Admin · Flight Management</h2>
+
+    <!-- ADD FLIGHT -->
+    <div class="admin-box">
+      <h4>Add New Flight</h4>
+
+      <form id="admin-add-flight-form">
+        <input type="text" id="af-airline" placeholder="Airline" required />
+        <input type="text" id="af-flight_number" placeholder="Flight Number" required />
+        <input type="number" id="af-departure_airport_id" placeholder="From Airport ID" required />
+        <input type="number" id="af-arrival_airport_id" placeholder="To Airport ID" required />
+        <input type="datetime-local" id="af-departure_time" required />
+        <input type="datetime-local" id="af-arrival_time" required />
+        <input type="number" id="af-price" placeholder="Price" required />
+        <input type="number" id="af-seats_available" placeholder="Seats" required />
+
+        <button class="skyfly-btn" type="submit">Add Flight</button>
+      </form>
+    </div>
+
+    <!-- FLIGHTS TABLE -->
+    <div class="admin-box">
+      <h4>All Flights</h4>
+      <div id="admin-flights-list"></div>
+    </div>
+  </div>
+</section>

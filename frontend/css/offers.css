@@ -1,0 +1,1357 @@
+/* Prevent horizontal scrolling on the body and html */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0;           /* Remove default margin */
+    padding: 0;          /* Remove default padding */
+    width: 100%;         /* Ensure full width */
+}
+/* Gallery Section Styling */
+.image-gallery-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 30vh; /* Set the height as 80% of the viewport height */
+    box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+
+/* Adjust the grid container's height */
+#image-gallery {
+    height: 100%; /* Ensure it takes up the full height of its parent */
+    overflow: hidden;
+    height: 55vh;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Default: Two equal columns */
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    height: 100%; 
+    box-sizing: border-box; /* Ensure that padding does not overflow */
+}   
+
+/* For the gallery items */
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    border-radius: 8px;
+    overflow: hidden !important;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Image specific height adjustment */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Remove any unwanted spacing below images */
+}
+
+
+/* First image: Takes up the left 50% of the container */
+.item1 {
+    grid-column: 1; /* Position it in the left column */
+    grid-row: 1 / span 2; /* Spans both rows vertically */
+}
+
+/* Second image: Positioned on the right half, takes up 50% */
+.item2 {
+    grid-column: 2; /* Position it in the right column */
+    grid-row: 1; /* Position it in the first row */
+    height: 100%; /* Fill the height */
+}
+
+/* Third and fourth images: Positioned side-by-side under the second image */
+.item3 {
+    grid-column: 2; /* Position it in the second column */
+    grid-row: 2; /* Position it in the second row */
+    width: 49%; /* Make it take up half of the right column */
+}
+
+.item4 {
+    grid-column: 2; /* Position it in the second column */
+    grid-row: 2; /* Position it in the second row */
+    width: 49%; /* Make it take up the other half of the right column */
+    margin-left: 51%; /* Push the second image to the left */
+}
+
+/* Hover Zoom Effect: Zoom without overflow */
+.gallery-item img:hover {
+    transform: scale(1.1);
+    object-position: center;
+    transform-origin: center; /* Ensure zoom starts from the center */
+} 
+.gallery-item img {
+    transition: transform 0.35s ease-in-out, object-position 0.35s ease-in-out;
+}
+
+/* Responsive Styling: Breakpoints for different screen sizes */
+
+/* Tablets and small devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .image-gallery-section {
+        width: 90%; /* Increase width slightly for tablets */
+        padding: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns */
+        grid-template-rows: auto auto; /* Two rows automatically sized */
+    }
+
+    .item3, .item4 {
+        width: 49%; /* Maintain equal size for images 3 and 4 */
+    }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .image-gallery-section {
+        width: 95%; /* Make it slightly bigger on mobile, but still smaller */
+        max-width: 100%; /* No max-width constraint on mobile */
+        padding: 10px;
+        height: 40vh;
+    }
+    #image-gallery{
+        height: 40vh;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* One column on mobile */
+        grid-template-rows: auto; /* Auto-adjust rows */
+    }
+
+    /* Only display the first image (item1) on mobile */
+    .item1 {
+        grid-column: 1; /* First image takes up full width on mobile */
+        grid-row: 1;
+    }
+
+    /* Hide the other images (item2, item3, item4) on mobile */
+    .item2, .item3, .item4 {
+        display: none;
+    }
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .image-gallery-section {
+        width: 100%; /* Full width for very small screens */
+        padding: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* One column on very small screens */
+        grid-template-rows: auto; /* Auto-adjust rows */
+    }
+
+    /* Only display the first image (item1) on very small screens */
+    .item1 {
+        grid-column: 1; /* First image takes up full width on mobile */
+        grid-row: 1;
+    }
+
+    /* Hide the other images (item2, item3, item4) on small screens */
+    .item2, .item3, .item4 {
+        display: none;
+    }
+}
+
+/* Gallery Section Styling */
+.image-gallery-section,
+.offer-details {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Offer Details Styling */
+.offer-details {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Offer Info Styling */
+.offer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.left-section {
+    max-width: 65%;
+}
+
+.offer-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Reduced margin for close alignment with duration */
+}
+
+.offer-location {
+    font-size: 1.1rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.duration {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px; /* Closer spacing with title */
+}
+
+.duration-icon {
+    margin-right: 8px;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+/* Price Styling */
+.right-section .price {
+    display: flex;
+    align-items: flex-start;
+    text-align: right;
+    font-size: 1.8rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.discounted-price {
+    font-size: 2.5rem;
+    color: #d9534f;
+    margin-right: 15px;
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.original-price {
+    font-size: 1rem;
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.price-per-person {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Destination Description */
+.destination-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+/* Booking Button */
+.booking-button {
+    display: block;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    text-align: center;
+    width: 220px;
+}
+
+.booking-button:hover {
+    background-color: #2980b9;
+}
+
+.sold-out-button {
+    display: block;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 20px;
+    text-align: center;
+    width: 220px;
+    opacity: 0.7;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .offer-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-section {
+        margin-top: 10px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-name {
+        font-size: 1.8rem;
+    }
+
+    .discounted-price {
+        font-size: 2rem;
+    }
+}
+
+/* Available Dates Section */
+.available-dates {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.dates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Date Blocks Container */
+.dates-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Date Block Styling */
+.date-block {
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100px;
+    text-align: center;
+    margin: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Day of Week Styling */
+.day-of-week {
+    font-size: 0.9rem;
+    color: #555;
+    position: relative; /* Make this a reference point for the badge */
+}
+
+
+.day {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.month,
+.year {
+    font-size: 0.9rem;
+}
+
+/* "Sold Out" Badge */
+.date-block.sold-out .sold-out-badge {
+    position: absolute;
+    top: 6px; /* Aligns at the top of .day-of-week */
+    right: 7px; /* Adjusts to the right slightly to overlap day-of-week */
+    background-color: #ff4c4c;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.date-block.sold-out {
+    background-color: #e7e3e3;
+    color: #666;
+}
+
+/* Available Date Styling */
+.date-block.available {
+    background-color: #fff;
+    color: #333;
+}
+
+.date-block.available:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dates-blocks {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .date-block {
+        width: 100%;
+    }
+
+    .date-block.sold-out .sold-out-badge {
+        right: 38.5%; /* Adjust right position slightly for mobile */
+        top: 10px;
+        padding: 2px 5px;
+        font-size: 0.6rem;
+    }
+    .dates-container{
+        margin: 5px 15px;
+    }
+}
+.hotel-overview-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    align-items: center;
+}
+
+.hotel-image {
+    width: 150px;
+    height: 150px; /* Fixed height for consistent image size */
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hotel-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hotel-details h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.stars {
+    color: gold;
+    font-size: 1rem;
+}
+
+.details-btn {
+    border: 1px solid #333;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 150px;
+    text-align:  center;
+    text-decoration: none;
+    color: black;
+}
+
+.price-and-book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.book-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.booked-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.inquiry-link {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hotel-overview-card {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        text-align: center;
+        margin: 5px 15px;
+    }
+
+    .hotel-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .price-and-book {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .details-btn{
+        max-width: none;
+    }
+}
+
+
+/* Main section styling */
+.itinerary-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Title styling */
+.itinerary-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Duration section */
+.duration2 {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the icon and text vertically */
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.duration-icon {
+    margin-right: 10px; /* Space between the icon and text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Day Cards */
+.day-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff; 
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+}
+
+.day-number {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.day-date {
+    background-color: #fff;
+    color: #333;
+    padding: 0 5px;
+    font-size: 1.1rem;
+}
+
+.toggle-btn {
+    background-color: inherit; 
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.day-content {
+    height: 0; /* Start with zero height */
+    opacity: 0; /* Fade out initially */
+    padding: 0 15px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #fff; 
+    overflow: hidden;
+    transition: height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.day-content.open {
+    height: auto; /* Let height expand based on content */
+    opacity: 1; /* Fade in */
+    padding: 15px; /* Show padding when open */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .itinerary-section {
+        padding: 10px;
+        margin: 15px;
+    }
+
+    .day-card {
+        margin-bottom: 10px;
+    }
+
+    .day-header {
+        font-size: 0.9rem;
+    }
+
+    .duration2 {
+        font-size: 0.9rem;
+    }
+    
+    /* Make sure day cards are full width on mobile */
+    .day-cards {
+        gap: 20px;
+    }
+}
+
+/* Icon positioning for toggling content */
+.toggle-btn i {
+    transition: transform 0.5s ease-in-out;
+}
+
+.day-card .open .toggle-btn i {
+    transform: rotate(180deg); /* Rotate the icon when open */
+}
+.offers-section {
+    padding: 10px 0 40px 0;
+    background-color: rgb(245, 245, 245); /* Light background for contrast */
+    background-image: none;
+    filter: brightness(100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #004080; /* Change as needed */
+    text-transform: uppercase;
+}
+
+.offer-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s;
+    max-height: 420px;
+}
+
+.offer-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-img {
+    position: relative;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card h3 {
+    font-size: 1.45rem;
+    margin: 15px 0;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.badge-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    background-color: #004080;
+    opacity: 0.9;
+    color: white;
+    padding: 5px 9px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.offer-card p {
+    padding: 0 15px;
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+
+.offer-card .btn-primary {
+    display: block;
+    margin: 15px auto;
+    background-color: #004080;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: none;
+}
+
+
+
+.btn-primary:hover {
+    background-color: #003366;
+}
+
+.price {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.normal-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    color: #ff4d4d;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+
+.trip-duration {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.trip-duration svg {
+    margin-right: 5px;
+    color: #004080;
+}
+
+.date {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #004080;
+    border-radius: 10px;
+    background-color: #e6f0f8;
+    color: #004080;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background-color: #0b033b; /* Dark blue background */
+    color: white;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Adjust minimum height to avoid collapsing */
+}
+
+/* Newsletter Container */
+.newsletter-container {
+    max-width: 1200px; /* Limit max width to 1000px */
+    width: 100%; /* Full width within the max-width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Left Content */
+.newsletter-content {
+    width: 650px; /* Adjust to fit within 1000px max-width */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.newsletter-container button {
+    font-weight: 700;
+}
+
+#Layer_1 {
+    width: 25px;
+    margin-left: 20px;
+}
+
+/* Right Image Section */
+.newsletter-image {
+    flex: 1;
+    height: 100%; /* Full height of the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-image img {
+    width: 100%; /* Image scales to fit width */
+    height: auto; /* Keeps image aspect ratio */
+    object-fit: cover; /* Ensure the image covers the section without distortion */
+    border-radius: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .newsletter-content {
+        width: 100%; /* Full width on smaller screens */
+    }
+    
+    .newsletter-section{
+        padding: 10px 30px;
+    }
+
+    .newsletter-image {
+        display: none; /* Hide image on smaller screens if needed */
+    }
+}
+@media (max-width: 991px) {
+    .newsletter-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter-content {
+        width: 100%; /* Take full width on smaller screens */
+    }
+
+    .newsletter-section{
+        padding: 10px 30px;
+    }
+
+    .newsletter-image {
+        width: 100%; /* Image takes full width */
+        margin-top: 20px;
+        max-height: 300px;
+    }
+
+    .newsletter-image img {
+        width: 100%; /* Fit the new width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .newsletter-image {
+        display: none; /* Hide image on mobile */
+    }
+}
+
+/* Terms Section */
+.terms-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.terms-title {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #004080;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Content Wrapper */
+.terms-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+/* Side-by-side layout for larger screens */
+@media (min-width: 768px) {
+    .terms-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .inclusions, .exclusions {
+        flex: 1;
+        padding: 0 20px;
+    }
+}
+
+/* Section Heading */
+.terms-heading {
+    color: #004080;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Unique List Styling */
+.terms-list {
+    padding-left: 30px; /* Left padding for bullet alignment */
+    list-style-type: disc;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.inclusions-list li, .exclusions-list li {
+    margin-bottom: 12px;
+}
+
+/* Disclaimer Section Styling */
+.disclaimer {
+    margin-top: 30px;
+    padding: 0 20px;
+    background-color: #eef3f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.disclaimer-title {
+    color: #d9534f;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.disclaimer-text {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Enhanced Spacing and Padding */
+.inclusions, .exclusions {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.terms-content .terms-list {
+    padding-left: 30px; /* Ensures uniform padding for list items */
+}
+
+@media (min-width: 992px) {
+    .terms-content {
+        gap: 60px;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
+  .modal.show {
+    display: flex;
+    opacity: 1;
+  }
+  .modal-content {
+    background: white;
+    padding: 40px;
+    padding-bottom: 80px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80vh;
+    overflow:hidden;
+  }
+  .modal.show .modal-content {
+    transform: scale(1);
+  }
+  .modal-images-container {
+    overflow-y: auto;
+    max-height: 70vh;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+  .modal-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .close-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 90%;
+    right: 50px;
+  }
+  
+  .close-btn:hover {
+    background-color: #c9302c;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-images {
+        grid-template-columns: 1fr;
+    }
+    .modal-images img {
+        height: auto;
+    }
+    .close-btn {
+        position: absolute;
+        align-self: center;
+        margin-top: 10px;
+        top: 87%;
+        right: 35%;
+    }
+  }
+
+  .luggage-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.luggage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.luggage-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3sease, box-shadow 0.3sease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.luggage-item h3{
+    color: black;
+    font-weight: 700;
+    margin: 20px 10px;
+}
+.luggage-section h2{
+    color: #333;
+    font-weight: 550;
+}
+.luggage-item i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.luggage-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.luggage-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .luggage-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures all images keep their aspect ratio */
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 image per row on mobile */
+    }
+}
+
+.modall {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Keep background dark */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0; /* Start with hidden opacity */
+    transition: opacity 0.3s ease; /* Only transition background opacity */
+  }
+  
+  .modall.show {
+    display: flex; /* Show the modal */
+    opacity: 1; /* Fade in background */
+  }
+  
+  .modal-contentt {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 90%; /* 90% of the screen width */
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Start with hidden modal content */
+    transform: scale(0.9); /* Start smaller */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for modal content */
+  }
+  
+  .modall.show .modal-contentt{
+    opacity: 1; /* Fade in modal content */
+    transform: scale(1); /* Zoom in to normal size */
+  }
+  .modall.show .modal-content{
+    opacity: 1; /* Fade in modal content */
+    transform: scale(1); /* Zoom in to normal size */
+  }
+  
+  .modal-contentt h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .modal-contentt p {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .modal-contentt a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-contentt a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .modal-contentt a i {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .close:hover {
+    color: #e74c3c;
+  }
+  
+  /* Media query for desktop */
+  @media (min-width: 1024px) {
+    .modal-contentt {
+      max-width: 600px; /* Set a larger max-width on desktop */
+      padding: 40px;
+    }
+  
+    .modal-contentt h2 {
+      font-size: 24px;
+    }
+  
+    .modal-contentt p {
+      font-size: 20px;
+    }
+  
+    .modal-contentt a i {
+      font-size: 18px;
+    }
+  }
+  
+  .blackspan{
+    color: #333;
+  }
+  .day-content p{
+    font-size: 1.15rem;
+  }

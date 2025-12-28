@@ -1,0 +1,198 @@
+  <!-- Hero Section / Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="assets/tokyo.jpg" class="d-block w-100" alt="Tokyo">
+        <div class="dark-overlay"></div>
+        <div class="carousel-caption-centered">
+          <h5>DISCOVER TOKYO</h5>
+          <p>Experience the lights, culture, and excitement of Japan’s capital city.</p>
+          <!-- <a href="#offers" class="btn btn-warning btn-lg book">Book Now</a> -->
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/dubai-hero.jpg" class="d-block w-100" alt="Dubai">
+        <div class="dark-overlay"></div>
+        <div class="carousel-caption-centered">
+          <h5>DREAM DESTINATIONS</h5>
+          <p>Your next adventure starts here. Find the best deals today.</p>
+          <!-- <a href="#offers" class="btn btn-warning btn-lg book">Find Flights</a> -->
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/istanbul-hero.jpg" class="d-block w-100" alt="Istanbul">
+        <div class="dark-overlay"></div>
+        <div class="carousel-caption-centered">
+          <h5>EXCLUSIVE DEALS</h5>
+          <p>Book group and seasonal flights at unbeatable prices.</p>
+          <!-- <a href="#offers" class="btn btn-warning btn-lg book">See Offers</a> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-message">Please enter all required information.</p>
+        </div>
+    </div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <p id="toast-message">please enter all required infromation.</p>
+    </div>
+
+    
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <!-- Search Bar -->
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <div class="input-group">
+          <label for="destination"><strong>Where are you flying?</strong></label>
+          <input type="text" id="destination" placeholder="Start typing your destination..." autocomplete="off" />
+          <ul id="suggestions" class="suggestions-list"></ul>
+        </div>
+
+        <div class="input-group">
+          <label for="date"><strong>When are you flying?</strong></label>
+          <input type="month" id="date" placeholder="Select month" />
+        </div>
+
+        <a id="search-btn" class="search-button" href="#flights">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,300,150">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="white" stroke-width="3" 
+                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
+                        <g transform="scale(4.12,4.12)">
+                            <path d="M21,3c-9.37891,0 -17,7.62109 -17,17c0,9.37891 7.62109,17 17,17c3.71094,0 7.14063,-1.19531 9.9375,-3.21875l13.15625,13.125l2.8125,-2.8125l-13,-13.03125c2.55469,-2.97656 4.09375,-6.83984 4.09375,-11.0625c0,-9.37891 -7.62109,-17 -17,-17zM21,5c8.29688,0 15,6.70313 15,15c0,8.29688 -6.70312,15 -15,15c-8.29687,0 -15,-6.70312 -15,-15c0,-8.29687 6.70313,-15 15,-15z"/>
+                        </g>
+                    </g>
+                </svg>
+                Search
+              </a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Popular Flights Section -->
+<section class="popular-flights-section" class="cloud">
+  <div class="container">
+    <h2 class="section-title text-center">Popular Flights from <span class="sarajevo">Sarajevo</span></h2>
+    <p class="section-subtitle text-center">
+      Discover trending destinations at unbeatable prices
+    </p>
+
+    <div class="popular-flights-grid">
+      <div class="flight-card" data-href="#flights">
+        <img src="assets/rome-hero.jpg" alt="Rome" class="flight-img">
+        <div class="flight-info">
+          <h3>Rome, Italy</h3>
+          <p>From <strong>€89</strong> | Round Trip</p>
+        </div>
+      </div>
+
+      <div class="flight-card">
+        <img src="assets/istanbul-hero.jpg" alt="Istanbul" class="flight-img">
+        <div class="flight-info">
+          <h3>Istanbul, Turkey</h3>
+          <p>From <strong>€75</strong> | Direct Flight</p>
+        </div>
+      </div>
+
+      <div class="flight-card">
+        <img src="assets/paris.jpg" alt="Paris" class="flight-img">
+        <div class="flight-info">
+          <h3>Paris, France</h3>
+          <p>From <strong>€112</strong> | Limited Offer</p>
+        </div>
+      </div>
+
+      <div class="flight-card">
+        <img src="assets/dubai-hero.jpg" alt="Dubai" class="flight-img">
+        <div class="flight-info">
+          <h3>Dubai, UAE</h3>
+          <p>From <strong>€299</strong> | Business Class/p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Flight Deals Section -->
+  <!-- <section id="offers" class="offers-section">
+    <div class="container">
+      <h2 class="section-title">Popular Flight Deals</h2>
+      <div class="slider">
+        <div class="slider-wrapper" id="offers-container">
+        </div>
+        <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Special Offers Section -->
+  <section class="city-tour-section">
+    <h2 class="section-title">Featured Destinations</h2>
+    <div class="city-cards">
+      <div class="city-card">
+        <div class="city-image">
+          <img src="assets/rome-hero.jpg" alt="Rome">
+        </div>
+        <div class="city-details">
+          <span class="city-tag">ROME 2025</span>
+          <h3 class="city-title">Rome Flight Deal</h3>
+          <p>Walk through history in the Eternal City. Explore the Colosseum, Vatican, and timeless Roman streets.</p>
+          <a href="#flights" class="more-link">View Offer →</a>
+        </div>
+      </div>
+
+      <div class="city-card">
+        <div class="city-image">
+          <img src="assets/istanbul-hero.jpg" alt="Istanbul">
+        </div>
+        <div class="city-details">
+          <span class="city-tag">ISTANBUL 2025</span>
+          <h3 class="city-title">Istanbul Flight Deal</h3>
+          <p>Where East meets West — discover the mesmerizing culture, food, and landmarks of Istanbul.</p>
+          <a href="#flights" class="more-link">View Offer →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2>Join Our Traveler Community</h2>
+        <p>Get updates on exclusive discounts, last-minute deals, and special travel packages directly to your inbox.</p>
+
+        <form class="newsletter-form">
+          <div class="input-container">
+            <input type="email" placeholder="Enter your email to subscribe" required class="email-input" />
+            <button type="submit" class="submit-btn">Subscribe</button>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="emailConsent" required />
+            <label for="emailConsent">I agree to receive promotional offers via email.</label>
+          </div>
+        </form>
+      </div>
+      <div class="newsletter-image">
+        <img src="assets/newsletterpic.jpeg" alt="Newsletter Travel Image" />
+      </div>
+    </div>
+  </section>

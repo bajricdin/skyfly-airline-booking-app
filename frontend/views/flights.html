@@ -1,0 +1,72 @@
+<section class="skyfly-flights">
+  <div class="container">
+    <h1 class="skyfly-title">SkyFly Flights</h1>
+
+        <!-- ADMIN ONLY: Add flight -->
+    <div class="d-flex justify-content-end mb-3">
+      <button id="btn-open-add-flight" class="skyfly-btn d-none">
+        Add Flight
+      </button>
+    </div>
+
+    <!-- Modal (simple) -->
+    <div id="add-flight-modal" class="d-none">
+      <div class="skyfly-summary-box">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="m-0">Add New Flight</h3>
+          <button id="btn-close-add-flight" type="button" class="skyfly-btn">X</button>
+        </div>
+
+        <form id="add-flight-form" class="skyfly-form mt-3">
+          <div class="skyfly-form-group">
+            <label>Airline</label>
+            <input id="af-airline" type="text" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Flight Number</label>
+            <input id="af-flight-number" type="text" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Departure Airport ID</label>
+            <input id="af-dep-airport" type="number" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Arrival Airport ID</label>
+            <input id="af-arr-airport" type="number" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Departure Time</label>
+            <input id="af-dep-time" type="datetime-local" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Arrival Time</label>
+            <input id="af-arr-time" type="datetime-local" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Price</label>
+            <input id="af-price" type="number" step="0.01" required>
+          </div>
+
+          <div class="skyfly-form-group">
+            <label>Seats Available</label>
+            <input id="af-seats" type="number" required>
+          </div>
+
+          <button type="submit" class="skyfly-btn">Save Flight</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div id="flights-list" class="skyfly-results">
+      <!-- JS injects flights here -->
+    </div>
+  </div>
+</section>
