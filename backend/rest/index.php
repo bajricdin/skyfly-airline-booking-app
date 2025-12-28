@@ -67,4 +67,13 @@ require_once __DIR__ . '/routes/BookingRoutes.php';
 require_once __DIR__ . '/routes/PaymentRoutes.php';
 require_once __DIR__ . '/routes/AuthRoutes.php';
 
+Flight::route('GET /', function () {
+    Flight::json([
+        "status" => "SkyFly API running",
+        "environment" => "production",
+        "time" => date('Y-m-d H:i:s')
+    ]);
+});
+
+
 Flight::start();
