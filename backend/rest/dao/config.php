@@ -5,19 +5,19 @@ error_reporting(E_ALL ^ (E_NOTICE | E_DEPRECATED));
 
 class Config {
    public static function DB_NAME() {
-       return Config::get_env("railway", "skyfly");
+       return Config::get_env("DB_NAME", "skyfly");
    }
    public static function DB_PORT() {
-       return Config::get_env("3306", 3306);
+       return Config::get_env("DB_PORT", 3306);
    }
    public static function DB_USER() {
-       return Config::get_env("root", 'root');
+       return Config::get_env("DB_USER", 'root');
    }
    public static function DB_PASSWORD() {
-       return Config::get_env("ucfyMVFTqxKKjTzzBZwnacIxhIgqholY", 'root');
+       return Config::get_env("DB_PASSWORD", 'root');
    }
    public static function DB_HOST() {
-       return Config::get_env("mysql.railway.internal", '127.0.0.1');
+       return Config::get_env("DB_HOST", '127.0.0.1');
    }
    public static function JWT_SECRET() {
        return Config::get_env("JWT_SECRET", ',dpPL,Se%fM-UVQBwf/X0T&B!DF6%}');
