@@ -21,7 +21,7 @@ function loadMyBookings() {
     return;
   }
 
-  const url = "http://localhost/skyfly2/backend/rest/bookings";
+  const url = "skyfly-airline-booking-app-production.up.railway.app/bookings";
 
   console.log("Loading bookings from:", url);
 

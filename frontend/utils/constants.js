@@ -1,5 +1,5 @@
 let Constants = {
-  PROJECT_BASE_URL: "http://localhost/skyfly2/backend/rest/",
+  PROJECT_BASE_URL: "skyfly-airline-booking-app-production.up.railway.app",
   USER_ROLE: "user",
   ADMIN_ROLE: "admin"
 };
