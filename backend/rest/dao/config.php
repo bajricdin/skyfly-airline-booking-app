@@ -5,19 +5,19 @@ error_reporting(E_ALL ^ (E_NOTICE | E_DEPRECATED));
 
 class Config {
    public static function DB_NAME() {
-       return Config::get_env("DB_NAME", "skyfly");
+       return Config::get_env("MYSQLDATABASE", "skyfly");
    }
    public static function DB_PORT() {
-       return Config::get_env("DB_PORT", 3306);
+       return Config::get_env("MYSQLPORT", 3306);
    }
    public static function DB_USER() {
-       return Config::get_env("DB_USER", 'root');
+       return Config::get_env("MYSQLUSER", 'root');
    }
    public static function DB_PASSWORD() {
-       return Config::get_env("DB_PASSWORD", 'root');
+       return Config::get_env("MYSQLPASSWORD", 'root');
    }
    public static function DB_HOST() {
-       return Config::get_env("DB_HOST", '127.0.0.1');
+       return Config::get_env("MYSQLHOST", '127.0.0.1');
    }
    public static function JWT_SECRET() {
        return Config::get_env("JWT_SECRET", ',dpPL,Se%fM-UVQBwf/X0T&B!DF6%}');
