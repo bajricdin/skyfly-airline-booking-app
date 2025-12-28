@@ -35,7 +35,7 @@ $(document).on("submit", "#skyfly-checkout-form", function (e) {
   }
 
   $.ajax({
-    url: "skyfly-airline-booking-app-production.up.railway.app/bookings",
+    url: "http://localhost/skyfly2/backend/rest/bookings",
     type: "POST",
     headers: {
       "Authentication": user.token

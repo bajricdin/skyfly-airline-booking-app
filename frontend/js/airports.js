@@ -31,8 +31,8 @@ window.Airports = {
         console.error("Failed to load airports");
       },
       complete: function () {
-        $.unblockUI();
-      }
+      $.unblockUI();
+    }
     });
   }
 };

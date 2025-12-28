@@ -14,7 +14,7 @@ function loadFlightDetails() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   $.ajax({
-    url: `skyfly-airline-booking-app-production.up.railway.app/flights/${flightId}`,
+    url: `http://localhost/skyfly2/backend/rest/flights/${flightId}`,
     type: "GET",
     headers: {
       Authentication: user?.token

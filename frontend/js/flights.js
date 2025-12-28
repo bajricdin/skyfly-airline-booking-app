@@ -37,7 +37,7 @@ function loadFlights() {
   Airports.load(() => {
 
     $.ajax({
-      url: "skyfly-airline-booking-app-production.up.railway.app/flights",
+      url: "http://localhost/skyfly2/backend/rest/flights",
       type: "GET",
       headers: {
         "Authentication": user.token
@@ -120,7 +120,7 @@ function selectFlight(flightId) {
   Airports.load(() => {
 
     $.ajax({
-      url: `skyfly-airline-booking-app-production.up.railway.app/flights/${flightId}`,
+      url: `http://localhost/skyfly2/backend/rest/flights/${flightId}`,
       type: "GET",
       headers: {
         "Authentication": user.token
@@ -198,8 +198,8 @@ $(document).on("submit", "#add-flight-form", function (e) {
 
   $.ajax({
     url: isEdit
-      ? `skyfly-airline-booking-app-production.up.railway.app/flights/${editingFlightId}`
-      : "skyfly-airline-booking-app-production.up.railway.app/flights",
+      ? `http://localhost/skyfly2/backend/rest/flights/${editingFlightId}`
+      : "http://localhost/skyfly2/backend/rest/flights",
     type: isEdit ? "PUT" : "POST",
     headers: { "Authentication": user.token },
     contentType: "application/json",
@@ -233,7 +233,7 @@ function deleteFlight(flightId) {
   if (!confirm("Are you sure you want to delete this flight?")) return;
 
   $.ajax({
-    url: `skyfly-airline-booking-app-production.up.railway.app/flights/${flightId}`,
+    url: `http://localhost/skyfly2/backend/rest/flights/${flightId}`,
     type: "DELETE",
     headers: {
       "Authentication": user.token
@@ -257,7 +257,7 @@ function editFlight(flightId) {
   if (!user || user.role !== "admin") return;
 
   $.ajax({
-    url: `skyfly-airline-booking-app-production.up.railway.app/flights/${flightId}`,
+    url: `http://localhost/skyfly2/backend/rest/flights/${flightId}`,
     type: "GET",
     headers: {
       "Authentication": user.token
@@ -276,9 +276,6 @@ function editFlight(flightId) {
 
       $("#add-flight-modal").removeClass("d-none");
     },
-    complete: function () {
-        $.unblockUI();
-      }
   });
 }
 
