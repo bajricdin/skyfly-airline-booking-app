@@ -1,6 +1,10 @@
 var UserService = {
   init: function () {
+<<<<<<< HEAD
     console.log("UserService.init()");
+=======
+    console.log("UserService.init() ✅");
+>>>>>>> origin/main
 
     // REGISTER
     $(document).on("submit", "#register-form", function (e) {
@@ -23,11 +27,15 @@ var UserService = {
         },
         error: function (xhr) {
           alert(xhr.responseText || "Registration failed");
+<<<<<<< HEAD
         },
         complete: function () {
           $.unblockUI();
         }
 
+=======
+        }
+>>>>>>> origin/main
       });
     });
 
@@ -89,5 +97,9 @@ var UserService = {
 
 $(document).ready(function () {
   UserService.applyAuthState();
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> origin/main

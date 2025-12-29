@@ -24,9 +24,12 @@ function loadFlightDetails() {
       $("#fd-route").text(`Airport ${f.departure_airport_id} → Airport ${f.arrival_airport_id}`);
       $("#fd-time").text(`${f.departure_time} → ${f.arrival_time}`);
       $("#fd-price").text(`$${f.price}`);
+<<<<<<< HEAD
     },  
     complete: function () {
       $.unblockUI();
+=======
+>>>>>>> origin/main
     }
   });
 }

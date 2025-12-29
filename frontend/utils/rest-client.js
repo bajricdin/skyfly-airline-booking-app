@@ -10,11 +10,15 @@ let RestClient = {
         );
       },
       success: callback,
+<<<<<<< HEAD
       error: error_callback,
       complete: function () {
         $.unblockUI();
       }
 
+=======
+      error: error_callback
+>>>>>>> origin/main
     });
   },
 
@@ -31,10 +35,14 @@ let RestClient = {
         );
       },
       success: callback,
+<<<<<<< HEAD
       error: error_callback,
       complete: function () {
         $.unblockUI();
       }
+=======
+      error: error_callback
+>>>>>>> origin/main
     });
   }
 };

@@ -1,5 +1,9 @@
 // frontend/js/services/api.js
+<<<<<<< HEAD
 const API_BASE = 'http://localhost/skyfly2/backend/rest';
+=======
+const API_BASE = 'http://localhost/backend/rest'; // adapt when deployed
+>>>>>>> origin/main
 
 async function apiFetch(path, opts = {}) {
   const headers = opts.headers || {};

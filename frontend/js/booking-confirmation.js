@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log("booking-confirmation.js loaded");
 
 function loadConfirmation() {
@@ -5,6 +6,15 @@ function loadConfirmation() {
 
   const flight = JSON.parse(localStorage.getItem("selected_flight"));
   const booking = JSON.parse(localStorage.getItem("booking_confirmation"));
+=======
+console.log("booking-confirmation.js loaded ✅");
+
+function loadConfirmation() {
+  console.log("Loading booking confirmation ✅");
+
+  const flight = JSON.parse(localStorage.getItem("selected_flight"));
+  const booking = JSON.parse(localStorage.getItem("booking_data"));
+>>>>>>> origin/main
 
   if (!flight || !booking) {
     $("#confirmation-summary").html(`

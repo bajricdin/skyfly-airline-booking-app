@@ -12,7 +12,11 @@
 */
 /**
 * @OA\Server(
+<<<<<<< HEAD
 *     url= "http://localhost/skyfly2/backend/rest",
+=======
+*     url= "http://localhost/airtrack/backend/rest",
+>>>>>>> origin/main
 *     description="API server"
 * )
 */

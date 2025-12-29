@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 console.log("flights.js loaded");
+=======
+console.log("flights.js loaded ✅");
+>>>>>>> origin/main
 let editingFlightId = null;
 
 /* ===============================
@@ -34,6 +38,10 @@ function loadFlights() {
   const user = JSON.parse(localStorage.getItem("user"));
   if (!user) return;
 
+<<<<<<< HEAD
+=======
+  // 🔑 ENSURE AIRPORTS ARE LOADED FIRST
+>>>>>>> origin/main
   Airports.load(() => {
 
     $.ajax({
@@ -43,7 +51,11 @@ function loadFlights() {
         "Authentication": user.token
       },
       success: function (flights) {
+<<<<<<< HEAD
         console.log("Flights loaded", flights);
+=======
+        console.log("Flights loaded ✅", flights);
+>>>>>>> origin/main
 
         let html = "";
 
@@ -96,11 +108,15 @@ function loadFlights() {
       },
       error: function (err) {
         console.error("Flights error", err.responseText);
+<<<<<<< HEAD
       },
       complete: function () {
         $.unblockUI();
       }
 
+=======
+      }
+>>>>>>> origin/main
     });
 
   });
@@ -130,6 +146,10 @@ function selectFlight(flightId) {
         const from = Airports.map[f.departure_airport_id];
         const to   = Airports.map[f.arrival_airport_id];
 
+<<<<<<< HEAD
+=======
+        // 🔥 STORE FULL, RESOLVED FLIGHT
+>>>>>>> origin/main
         localStorage.setItem(
           "selected_flight",
           JSON.stringify({
@@ -143,9 +163,12 @@ function selectFlight(flightId) {
       },
       error: function () {
         alert("Failed to load flight");
+<<<<<<< HEAD
       },
       complete: function () {
         $.unblockUI();
+=======
+>>>>>>> origin/main
       }
     });
 
@@ -214,10 +237,14 @@ $(document).on("submit", "#add-flight-form", function (e) {
     error: function (xhr) {
       console.error(xhr.responseText);
       alert("Save failed");
+<<<<<<< HEAD
     },
     complete: function () {
         $.unblockUI();
       }
+=======
+    }
+>>>>>>> origin/main
   });
 });
 
@@ -245,10 +272,14 @@ function deleteFlight(flightId) {
     error: function (xhr) {
       console.error(xhr.responseText);
       alert("Cannot delete flight that is already booked!");
+<<<<<<< HEAD
     },
     complete: function () {
         $.unblockUI();
       }
+=======
+    }
+>>>>>>> origin/main
   });
 }
 
@@ -275,7 +306,11 @@ function editFlight(flightId) {
       $("#af-seats").val(f.seats_available);
 
       $("#add-flight-modal").removeClass("d-none");
+<<<<<<< HEAD
     },
+=======
+    }
+>>>>>>> origin/main
   });
 }
 

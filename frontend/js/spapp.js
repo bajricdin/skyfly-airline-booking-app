@@ -53,6 +53,16 @@ $(document).ready(function () {
         onReady:loadConfirmation
     });
 
+<<<<<<< HEAD
+=======
+    // app.route({
+    //     view: "admin-flights",
+    //     load: "admin-flights.html",
+    //     onCreate: function () {
+    //         loadAdminFlights();
+    //     }
+    // }); 
+>>>>>>> origin/main
     app.run();
 });
 
