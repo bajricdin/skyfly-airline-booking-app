@@ -2,8 +2,6 @@
 
 **Course:** Web Programming  
 **Student:** Din Bajrić  
-**Milestone 1:** Frontend SPA Setup & Database Schema <br>
-**Milestone 2:** DAO Layer and SQL file
 
 ---
 
