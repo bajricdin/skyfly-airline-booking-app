@@ -21,6 +21,8 @@ Flight::register('paymentService', 'PaymentService');
 Flight::register('auth_service', "AuthService");
 Flight::register('auth_middleware', 'AuthMiddleware');
 
+<<<<<<< HEAD
+=======
 // Flight::route('GET /', function(){
 //     Flight::json([
 //         "status" => "✅ SkyFly API Running",
@@ -28,6 +30,7 @@ Flight::register('auth_middleware', 'AuthMiddleware');
 //         "developer" => "Din Bajrić"
 //     ]);
 // });
+>>>>>>> origin/main
 
 Flight::before('start', function () {
 
@@ -48,10 +51,18 @@ Flight::before('start', function () {
     Flight::auth_middleware()->verifyToken($token);
 });
 
+<<<<<<< HEAD
+//Get info about logged in user
+=======
+>>>>>>> origin/main
 Flight::route('GET /me', function () {
     Flight::json(Flight::get('user'));
 });
 
+<<<<<<< HEAD
+//Used this route to compare number of entries in main tables
+=======
+>>>>>>> origin/main
 Flight::route('GET /__compare', function () {
     $db = Database::connect();
     $users = $db->query("SELECT COUNT(*) c FROM users")->fetch();
@@ -72,4 +83,16 @@ require_once __DIR__ . '/routes/BookingRoutes.php';
 require_once __DIR__ . '/routes/PaymentRoutes.php';
 require_once __DIR__ . '/routes/AuthRoutes.php';
 
+<<<<<<< HEAD
+Flight::route('GET /', function () {
+    Flight::json([
+        "status" => "SkyFly API running",
+        "environment" => "production",
+        "time" => date('Y-m-d H:i:s')
+    ]);
+});
+
+
+=======
+>>>>>>> origin/main
 Flight::start();

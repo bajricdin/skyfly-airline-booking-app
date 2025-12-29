@@ -3,9 +3,15 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 require __DIR__ . '/../../../vendor/autoload.php';
 if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1'){
+<<<<<<< HEAD
+   define('BASE_URL', 'http://localhost/skyfly2/backend');
+} else {
+   define('BASE_URL', 'https://skyfly2/backend/');
+=======
    define('BASE_URL', 'http://localhost/airtrack/backend');
 } else {
    define('BASE_URL', 'https://airtrack/backend/');
+>>>>>>> origin/main
 }
 $openapi = \OpenApi\Generator::scan([
    __DIR__ . '/doc_setup.php',

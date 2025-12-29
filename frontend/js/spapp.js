@@ -53,6 +53,8 @@ $(document).ready(function () {
         onReady:loadConfirmation
     });
 
+<<<<<<< HEAD
+=======
     // app.route({
     //     view: "admin-flights",
     //     load: "admin-flights.html",
@@ -60,6 +62,7 @@ $(document).ready(function () {
     //         loadAdminFlights();
     //     }
     // }); 
+>>>>>>> origin/main
     app.run();
 });
 

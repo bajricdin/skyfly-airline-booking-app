@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+console.log("checkout.js loaded");
+=======
 console.log("checkout.js loaded ✅");
+>>>>>>> origin/main
 
 function loadCheckout() {
   const flight = JSON.parse(localStorage.getItem("selected_flight"));
@@ -46,7 +50,10 @@ $(document).on("submit", "#skyfly-checkout-form", function (e) {
     }),
     success: function (booking) {
 
+<<<<<<< HEAD
+=======
       // ✅ SAVE EVERYTHING NEEDED FOR CONFIRMATION VIEW
+>>>>>>> origin/main
       localStorage.setItem(
         "booking_confirmation",
         JSON.stringify({
@@ -65,6 +72,14 @@ $(document).on("submit", "#skyfly-checkout-form", function (e) {
     },
     error: function () {
       alert("Booking failed");
+<<<<<<< HEAD
+    },
+    complete: function () {
+      $.unblockUI();
     }
+
+=======
+    }
+>>>>>>> origin/main
   });
 });

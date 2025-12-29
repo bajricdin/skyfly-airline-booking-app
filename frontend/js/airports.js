@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+console.log("airports.js loaded");
+=======
 console.log("airports.js loaded ✅");
+>>>>>>> origin/main
 
 window.Airports = {
   map: {},
@@ -29,7 +33,14 @@ window.Airports = {
       },
       error: () => {
         console.error("Failed to load airports");
+<<<<<<< HEAD
+      },
+      complete: function () {
+      $.unblockUI();
+    }
+=======
       }
+>>>>>>> origin/main
     });
   }
 };
